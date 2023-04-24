@@ -10,13 +10,13 @@ export default function Home() {
         </aside>
         <main className="p-4 bg-green-300 w-full flex flex-col">
           <h2 className="bg-emerald-200 p-4">Main</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 sm:grid-cols-2 gap-4 mt-4 min-h-[250px]">
+          <div className="grid grid-cols-2 md:grid-cols-4 sm:grid-cols-2 gap-4 mt-4 min-h-[220px]">
             <div className="bg-slate-300 h-auto w-full p-4">Card 1</div>
             <div className="bg-slate-300 h-auto w-full p-4">Card 2</div>
             <div className="bg-slate-300 h-auto w-full p-4">Card 3</div>
             <div className="bg-slate-300 h-auto w-full p-4">Card 4</div>
           </div>
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 min-h-[250px]">
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 min-h-[400px]">
             <div className="bg-blue-100 w-full p-4">Chart 1</div>
             <div className="bg-blue-100 w-full p-4">Chart 2</div>
           </div>
