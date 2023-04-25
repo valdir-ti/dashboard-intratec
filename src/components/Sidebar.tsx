@@ -2,6 +2,8 @@
 
 import React from 'react'
 
+import { Menu } from 'lucide-react';
+
 const Sidebar = () => {
 
   const [isOpen, setIsOpen] = React.useState(true)
@@ -25,8 +27,9 @@ const Sidebar = () => {
   }, [])
 
   return (
-    <aside className={`bg-zinc-300 flex justify-center p-4 ${isOpen ? 'w-72' : 'w-20'}`}>
-      <h2 className="sm:flex xs:hidden cursor-pointer font-bold" onClick={handleOpenMenu}>
+    <aside className={`bg-zinc-300 flex justify-center p-4 xs:p-2 ${isOpen ? 'w-72' : 'w-20'}`}>
+      <h2 className="flex items-center justify-center sm:flex font-bold h-8 xs:text-1xl">
+        <Menu size={18} className='mr-2 cursor-pointer' onClick={handleOpenMenu}/>
         {title}
       </h2>
     </aside>
