@@ -1,6 +1,7 @@
+import { Icon } from 'lucide-react'
 interface CardProps {
   title: string
-  Icon: any
+  Icon: Icon
 }
 
 const Card = ({ title, Icon }: CardProps) => {
