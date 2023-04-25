@@ -1,35 +1,44 @@
 'use client'
 
-import React from 'react'
+import {useEffect, useState, useCallback} from 'react'
 
 import { Menu } from 'lucide-react';
 
+import useWindowSize, { Size } from '@/hooks/useWindowSize';
+
 const Sidebar = () => {
 
-  const [isOpen, setIsOpen] = React.useState(true)
-  const [title, setTitle] = React.useState('...')
+  const size: Size = useWindowSize();
 
-  const handleOpenMenu = React.useCallback(() => {
+  const [isOpen, setIsOpen] = useState(true)
+  const [title, setTitle] = useState('...')
+
+  const handleOpenMenu = useCallback(() => {
     setIsOpen(!isOpen)
-    if(!isOpen){
+
+    if(!isOpen) {
       setTitle('Intratec Tecnologia')
-    }else{
+    } else {
       setTitle('IT')
     }
+
   }, [isOpen, setIsOpen])
 
-  React.useEffect(() => {
-    if(isOpen){
-      setTitle('Intratec Tecnologia')
-    }else{
+  useEffect(() => {
+
+    if(size.width! < 640){
       setTitle('IT')
+      setIsOpen(false)
+    } else {
+      setTitle('Intratec Tecnologia')
     }
-  }, [])
+
+  }, [size])
 
   return (
     <aside className={`bg-zinc-300 flex justify-center p-4 xs:p-2 ${isOpen ? 'w-72' : 'w-20'}`}>
-      <h2 className="flex items-center justify-center sm:flex font-bold h-8 xs:text-1xl">
-        <Menu size={18} className='mr-2 cursor-pointer' onClick={handleOpenMenu}/>
+      <h2 className={`flex items-center justify-center sm:flex font-bold h-8 ${size.width! < 640 && isOpen && 'xs:text-[12px]'}`}>
+        <Menu size={18} className='mr-2 cursor-pointer duration-300' onClick={handleOpenMenu}/>
         {title}
       </h2>
     </aside>
