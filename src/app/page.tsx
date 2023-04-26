@@ -2,7 +2,6 @@ import { DollarSign, ArrowUpRight, ShoppingBag, Users } from 'lucide-react'
 
 import Card from "@/components/Card";
 import Chart from "@/components/Chart";
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 
@@ -26,7 +25,6 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <Footer />
     </div>
   )
 }
