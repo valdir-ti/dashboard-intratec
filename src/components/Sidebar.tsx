@@ -23,6 +23,8 @@ const Sidebar = ({children}: SidebarProps) => {
     React.useEffect(() => {
         if(Number(size.width) < 640){
             setIsOpen(false)
+        } else {
+          setIsOpen(true)
         }
     }, [size])
 
