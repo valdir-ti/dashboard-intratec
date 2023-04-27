@@ -1,8 +1,3 @@
-import { DollarSign, ArrowUpRight, ShoppingBag, Users } from 'lucide-react'
-
-import Card from "@/components/Card";
-import Chart from "@/components/Chart";
-import Navbar from "@/components/Navbar";
 import Header from '@/components/Header';
 import TopCards from '@/components/TopCards';
 
