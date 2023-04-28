@@ -5,9 +5,13 @@ import { Menu } from 'lucide-react'
 
 import useWindowSize, { Size } from '@/hooks/useWindowSize';
 
+type HeaderProps = {
+  children: React.ReactNode
+}
+
 import SideNavigation from "./SideNavigation"
 
-const Header = () => {
+const Header = ({ children }: HeaderProps) => {
 
   const size: Size = useWindowSize();
 
@@ -31,6 +35,7 @@ const Header = () => {
         {mobilePosition ? <div><Menu onClick={handleMenu} className='cursor-pointer'/></div> : <div></div>}
         <h2>Welcome back, Valdir</h2>
       </div>
+      <div>{children}</div>
     </>
   )
 }
