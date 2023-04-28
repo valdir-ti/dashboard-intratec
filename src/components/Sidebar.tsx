@@ -2,9 +2,10 @@
 
 import React from 'react'
 import Link from "next/link"
-import { Home, LayoutDashboard, Settings, ShoppingBag, User } from "lucide-react"
+import { Home } from "lucide-react"
 
 import useWindowSize, { Size } from '@/hooks/useWindowSize';
+import Menu from './Menu';
 
 type SidebarProps = {
     children: React.ReactNode
@@ -37,30 +38,7 @@ const Sidebar = ({children}: SidebarProps) => {
                         {isOpen && <h3 className='ml-2 font-bold'>Intratec Tecnologia</h3>}
                     </Link>
                     <span className="border-b-[1px] border-gray-200 w-full p-2"></span>
-                    <Link href='/' className='flex items-center'>
-                        <div className="bg-gray-100 hover:bg-gray-200 cursor-pointer my-4 p-3 rounded-lg inline-block">
-                            <LayoutDashboard size={18}/>
-                        </div>
-                        {isOpen && <h3 className='ml-2'>Dashboard</h3>}
-                    </Link>
-                    <Link href='/users' className='flex items-center'>
-                        <div className="bg-gray-100 hover:bg-gray-200 cursor-pointer my-4 p-3 rounded-lg inline-block">
-                            <User size={18}/>
-                        </div>
-                        {isOpen && <h3 className='ml-2'>Users</h3>}
-                    </Link>
-                    <Link href='/orders' className='flex items-center'>
-                        <div className="bg-gray-100 hover:bg-gray-200 cursor-pointer my-4 p-3 rounded-lg inline-block">
-                            <ShoppingBag size={18}/>
-                        </div>
-                        {isOpen && <h3 className='ml-2'>Orders</h3>}
-                    </Link>
-                    <Link href='/settings' className='flex items-center'>
-                        <div className="bg-gray-100 hover:bg-gray-200 cursor-pointer my-4 p-3 rounded-lg inline-block">
-                            <Settings size={18}/>
-                        </div>
-                        {isOpen && <h3 className='ml-2'>Settings</h3>}
-                    </Link>
+                    <Menu isOpen={isOpen}/>
                 </div>
                 <div>2</div>
             </div>
